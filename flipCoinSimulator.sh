@@ -1,11 +1,13 @@
 #! /bin/bash -x
+
 chead=0
 ctail=0
-
 cwin1=0
 cwin2=0
 
- while [ $chead -le 21 ] || [ $ctail -le 21 ]
+for ((i=1;i<=3;i++))
+do
+        while [ $chead -le 21 ] || [ $ctail -le 21 ]
         do
                 flip=$(((RANDOM % 2) + 1))
                 if [[ $flip -eq 1 ]]
@@ -39,6 +41,7 @@ echo "round $i"
 
 echo "head is: $chead"
 echo "tail is: $ctail"
+done
 
 echo "head win $cwin1 time  "
 echo "tail is win $cwin2 time "
